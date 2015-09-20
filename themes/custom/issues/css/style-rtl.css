@@ -1,0 +1,201 @@
+/* RTL */
+
+html, body {
+  direction: rtl;
+}
+
+.logo, .name-wrapper {
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+.pull-left {
+  float: right !important;
+}
+
+.navbar-default .navbar-brand {
+  padding: 15px 0 15px 15px;
+}
+
+/*BUTTONS*/
+.comments-comments-button, .comments-form-button {
+  float: right;
+}
+/*END BUTTONS*/
+
+/*COMMENTS*/
+#comments-comments {
+  float: right;
+  margin-left: 2%;
+}
+
+#comments-form {
+  float: left;
+  margin-right: 2%;
+}
+/*END COMMENTS*/
+
+.quicktabs-tabs li a {
+  margin-left:40px;
+}
+
+.below-footer li, footer #block-block-2 li {
+  margin:0 0 20px 20px;
+}
+
+.node-type-question .links, .page-comment .links,
+.node-type-answer .links {
+  float:left;
+}
+
+.node-type-question .field-name-field-topics, .page-comment .field-name-field-topics {
+  float:right;
+}
+
+.field-name-field-topics .field-items > div {
+  margin-left:10px;
+}
+
+.answer-byline span {
+  margin-left:5px;
+}
+
+.node-type-party .field-name-field-short-summary {
+  padding:0 0 0 10px;
+}
+
+.node-party .col-md-8, .node-candidate .col-md-6 {
+  padding-right:0;
+}
+
+.websites > *, .websites .field-name-field-other-social-media .field-items > div {
+  margin-left:10px;
+}
+
+/*OWL CAROUSEL*/
+.owl-theme .owl-controls {
+  left: 0;
+  right: auto;
+}
+
+.owl-theme .owl-controls .owl-buttons .owl-prev {
+  margin-left: 40px;
+  margin-right: 0px;
+}
+
+.owl-theme .owl-controls .owl-buttons div:after {
+  content:'\f105';
+}
+
+.owl-theme .owl-controls .owl-buttons div:nth-of-type(1):after {
+  content:'\f105';
+}
+
+.owl-theme .owl-controls .owl-buttons div:nth-of-type(2):after {
+  content:'\f104';
+}
+/*END OWL CAROUSEL*/
+
+.view .pager .pager-previous a:after {
+  margin-left:10px;
+}
+
+.view .pager .pager-next a:after {
+  margin-right:10px;
+}
+
+#block-addtoany-addtoany-button {
+  text-align:left;
+}
+
+.block .view-questions .views-field-views-conditional,
+.view-taxonomy-term .views-field-views-conditional {
+  float: right;
+  margin-left: 20px;
+  margin-right: 0px;
+}	
+
+.block .view-questions .fa-headphones, .block .view-questions .fa-play-circle, .block .view-questions  .fa-list ,
+.view-taxonomy-term .fa-headphones, .view-taxonomy-term .fa-play-circle, .view-taxonomy-term  .fa-list {
+  margin-left:5px;
+}	
+
+.block .view-questions span.views-field, .view-taxonomy-term span.views-field {
+  margin-left:10px;
+}
+
+.front .region-highlighted #block-views-questions-block-3,
+.front .region-highlighted #block-views-questions-block-4,
+.front .region-highlighted #block-views-comment-count-comment-count {
+  margin:20px 0 0 20px;
+}
+
+.front .region-highlighted #block-views-comment-count-comment-count  {
+  margin-left:0;
+}
+
+.node-type-partner .field-name-field-logo, .view-partners .views-field-field-logo {
+  float:left;
+  margin: 0 20px 20px 0;
+}
+
+/* Show the partners and about blocks on the home page in RTL order. */
+#block-views-partners-block-1, #block-views-partners-block-2 {
+  float: right;
+}
+
+/* Show blocks on candidate pages in rtl order */
+.node-candidate .content > div.col-md-6, .node-candidate .content > div.col-md-3 {
+  float: right;
+}
+
+/* Show rows in views in rtl order */
+.views-row {
+  float: right;
+}
+
+/* Make an exception for view-questions so the answered field shows okay. */
+/* We added class no-float to the rows of view-questions. Let's use it! */
+.views-row.no-float {
+  float: none;
+}
+
+/* Make an exception for the list of partners in the partners block. */
+#block-views-partners-block-1 .views-row {
+  float: none;
+}
+
+/* Make an exception for the comment counter on the home page. */
+.view-comment-count .views-row {
+  float: none;
+}
+
+/* Override settings from system.menus-rtl.css to style the main menu. */
+ul.navbar-nav li {
+  margin: 0;
+}
+
+ul.navbar-nav li.expanded, ul.navbar-nav li.collapsed, ul.navbar-nav li.leaf {
+  padding: 0;
+}
+
+.view-answers .field-content i {
+  right: 20px;
+  left: auto;
+}
+
+/*SEARCH* /
+#block-search-form {
+  right:0;
+}
+
+.view-search .view-content .views-row:nth-child(3n+1) {
+  clear:left;
+}
+/*END SEARCH*/
+
+@media (min-width:786px) {
+  ul.menu {
+    text-align: center;
+  }
+}

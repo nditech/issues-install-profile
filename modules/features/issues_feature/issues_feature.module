@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Issues Feature feature.
+ */
+
+include_once 'issues_feature.features.inc';

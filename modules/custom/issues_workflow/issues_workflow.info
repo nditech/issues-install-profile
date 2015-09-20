@@ -1,0 +1,5 @@
+name = Issues Workflow
+description = Updates the "answered" status of any affected questions when updating an answer.
+core = 7.x
+package = Issues
+version = 7.x-1.0-alpha1

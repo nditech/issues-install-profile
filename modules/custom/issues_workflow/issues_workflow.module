@@ -1,0 +1,82 @@
+<?php
+
+/* 
+ * @file
+ * Updates the "answered" status of any affected questions when updating an answer.
+ */
+
+/**
+ * Implements hook_node_update().
+ * 
+ * Update the "answered" status of any affected questions when updating an
+ * answer.
+ */
+function issues_workflow_node_update($node) {
+  // Ignore all nodes that are not of type "Answer".
+  if ($node->type != 'answer') {
+    return;
+  }
+
+  // Save the original node.
+  $original = $node->original;
+
+  // Bail out if the entity reference field to the question did not change.
+  $original_language = isset($original->field_question[$original->language]) ? $original->field_question[$original->language] : LANGUAGE_NONE;
+  $original_question_id = $original->field_question[$original_language][0]['target_id'];
+  $language = isset($node->field_question[$node->language]) ? $node->field_question[$node->language] : LANGUAGE_NONE;
+  $question_id = $node->field_question[$language][0]['target_id'];
+  if ($original_question_id == $question_id) {
+    return;
+  }
+
+  // Now let's first ask the database if we need to update any of the two
+  // affected questions.
+  $original_count = _issues_workflow_question_answer_count($original_question_id);
+  $count = _issues_workflow_question_answer_count($question_id);
+  if (($original_count != 0) && ($count != 1)) {
+    return;
+  }
+
+  // We just removed an answer from the question with id original_question_id.
+  // Depending on the answer count we set its "answered" status to "0" ("No").
+  _issues_workflow_question_update_status($original_count, '0', $original_question_id, '0');
+
+  // We just added an answer to the question with id question_id.
+  // Depending on the answer count we set its "answered" status to "1" ("Yes").
+  _issues_workflow_question_update_status($count, '1', $question_id, '1');
+}
+
+/**
+ * Helper function for determining how often a question was answered.
+ * 
+ * We're extracting data directly from the database for performance. 
+ * Date integrity is never at risk when reading data from the database.
+ */
+function _issues_workflow_question_answer_count($question_id) {
+  // Return the # of answers to the question with id question_id.
+  return db_select('field_data_field_question', 'fdfq')
+    ->fields('fdfq')
+    ->condition('field_question_target_id', $question_id)
+    ->countQuery()
+    ->execute()
+    ->fetchField();
+}
+
+/**
+ * Helper function that updates the "answered" status of a question.
+ * 
+ * Let's not write directly into the database but use the regular drupal way to
+ * save changes to a node. This will ensure our data integrity.
+ */
+function _issues_workflow_question_update_status($count, $value, $question_id, $status) {
+  if ($count == $value) {
+    // Load the question with id question_id.
+    $question = node_load($question_id);
+    // Determine the language of the "answered" field.
+    $language = isset($question->field_answered[$question->language]) ? $question->field_answered[$question->language] : LANGUAGE_NONE;
+    // Change the value of the "answered" field.
+    $question->field_answered[$language][0]['value'] = $status;
+    // Save the change.
+    node_save($question);
+  }
+}

@@ -1,0 +1,187 @@
+/**
+ * This file should get overwritten if Method 1 is used. If Method 2 is chosen,
+ * remove this comment and start adding your styles to this file.
+ */
+html, body {
+	margin:0;
+	padding:0;
+}
+html, html a {
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+}
+body {
+	font-family:Khula, sans serif;
+	font-weight:400;
+	font-size:18px;
+	font-size:1.8rem;
+	background-color:#fff;
+	color:#111111;
+}
+h1, h2, h3, h4 {
+	font-family:Martel, serif;
+}
+h1 {
+	font-weight:900;
+	font-size:28px;
+	font-size:2.8rem;
+}
+h2 {
+	font-weight:700;
+	font-size:24px;
+	font-size:2.4rem;
+}
+h3 {
+	font-weight:700;
+	font-size:20px;
+	font-size:2rem;
+}
+a {
+	color:#111111;
+}
+a:hover {
+	text-decoration:underline;
+}
+a:focus {
+	color:#c81a1a;
+}
+img {
+	max-width:100%;
+	height:auto;
+}
+.navbar-default {
+	background-color:#f0efef;
+	border-color:transparent;
+	border:none;
+}
+.navbar-header {
+	float:none;
+	padding:20px 0;
+}
+.logo, .name-wrapper {
+	display:table-cell;
+	margin-right:10px;
+}
+.name-wrapper {
+	font-family:Martel, serif;
+}
+.name-wrapper .lead {
+	font-size:23px;
+	font-size:2.3rem;
+}
+.name-wrapper .name {
+	font-size:36px;
+	font-size:3.6rem;
+}
+.navbar-default .navbar-brand {
+	color:#111;
+	padding-left:0;
+}
+.navbar-default .navbar-brand:hover {
+        color:#111;
+}
+.region-navigation {
+	position:relative;
+}
+#block-search-form {
+	position:absolute;
+	top:-62px;
+	width:30%;
+	right:0;
+}
+.navbar-collapse {
+	background-color:#555454;
+}
+.navbar-default .navbar-nav>li {
+	display:inline-block;
+}
+.navbar-default .navbar-nav>li a, .navbar-nav>li a:visited {
+	color:#fff;
+	background-color:#555454;
+}
+.navbar-default .navbar-nav>li a:hover {
+	color:#555454;
+	background-color:#f0efef;
+}
+footer {
+	color:#fff;
+	background-color:#555454;
+	padding:20px;
+	text-align:center;
+}
+footer #block-block-2 ul li a {
+	display:block;
+	height:44px;
+	width:44px;
+	color:#555454;
+	background-color:#e4e3e3;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	border-bottom:5px solid #c6c5c5;
+	text-shadow:0px -2px #c6c5c5;
+	transition: all 0.1s;
+	-webkit-transition: all 0.1s;
+}
+footer @block-block-2 ul li a:hover {
+	text-decoration:none;
+}
+footer #block-block-2 ul li a:active {
+	transform: translate(0px,5px);
+  	-webkit-transform: translate(0px,5px);
+	border-bottom: 1px solid;
+}
+footer #block-block-2 ul li a span {
+	position:absolute;
+	left:-9999px;
+	top:-9999px
+}
+footer #block-block-2 ul li a:after {
+	font-family:FontAwesome;
+	font-size:25px;
+	font-size:2.5rem;
+	display:inline-block;
+	margin-top:4px;
+}
+footer #block-block-2 ul li:nth-of-type(1)  a:after {
+	content:'\f09a';
+}
+footer #block-block-2 ul li:nth-of-type(2)  a:after {
+        content:'\f099';
+}
+
+.below-footer {
+	text-align:center;
+	padding:20px;
+	font-size:14px;
+	font-size:1.4rem;
+}
+.below-footer ul, footer #block-block-2 ul {
+	padding:0;
+	margin:0;
+}
+.below-footer li, footer #block-block-2 li {
+	list-style:none;
+	display:inline-block;
+	margin:0 20px 20px 0;
+}
+.below-footer li a {
+	text-transform:uppercase;
+	color:#c81a1a;
+	font-weight:700;
+}
+.below-footer li:last-of-type {
+	display:block;
+}
+
+@media (min-width:786px) {
+	.navbar-header {
+		float:none;
+	}
+	.navbar-nav>li {
+		float:none;
+	}
+	.navbar-nav {
+		text-align:center;
+		width:100%;
+	}
+}
