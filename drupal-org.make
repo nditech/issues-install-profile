@@ -6,8 +6,8 @@ core = 7.39
 projects[addtoany][subdir] = contrib
 projects[addtoany][version] = 4.9
 
-; projects[auto_entitylabel][subdir] = contrib
-; projects[auto_entitylabel][version] = 1.3
+projects[auto_entitylabel][subdir] = contrib
+projects[auto_entitylabel][version] = 1.3
 
 projects[block_class][subdir] = contrib
 projects[block_class][version] = 2.1
@@ -30,8 +30,8 @@ projects[entity][version] = 1.6
 projects[entityreference][subdir] = contrib
 projects[entityreference][version] = 1.1
 
-; projects[entityreference_prepopulate][subdir] = contrib
-; projects[entityreference_prepopulate][version] = 1.5
+projects[entityreference_prepopulate][subdir] = contrib
+projects[entityreference_prepopulate][version] = 1.5
 
 projects[features][subdir] = contrib
 projects[features][version] = 2.6
@@ -73,11 +73,8 @@ projects[link][subdir] = contrib
 projects[link][version] = 1.3
 
 projects[mailchimp][subdir] = contrib
-projects[mailchimp][version] = 3.4
-; projects[mailchimp][version] = 3.6
-
-; projects[menu_views][subdir] = contrib
-; projects[menu_views][version] = 2.2
+; projects[mailchimp][version] = 3.4
+projects[mailchimp][version] = 3.6
 
 projects[metatag][subdir] = contrib
 projects[metatag][version] = 1.7
@@ -127,8 +124,8 @@ projects[variable][subdir] = contrib
 projects[variable][version] = 2.5
 
 projects[video_embed_field][subdir] = contrib
-projects[video_embed_field][version] = 2.0-beta10
-; projects[video_embed_field][version] = 2.0-beta11
+; projects[video_embed_field][version] = 2.0-beta10
+projects[video_embed_field][version] = 2.0-beta11
 
 projects[views][subdir] = contrib
 projects[views][version] = 3.11

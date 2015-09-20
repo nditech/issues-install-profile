@@ -7,21 +7,9 @@ exclusive = 1
 ;
 ; Core modules
 ;
-; dependencies[] = field
-; dependencies[] = field_storage
-; dependencies[] = filter
-; dependencies[] = node
-; dependencies[] = system
-; dependencies[] = text
-; dependencies[] = user
-
-; dependencies[] = aggregator
 dependencies[] = block
-; dependencies[] = blog
-; dependencies[] = book
 dependencies[] = color
 dependencies[] = comment
-; dependencies[] = contact
 dependencies[] = contextual
 ; dependencies[] = dblog
 ; dependencies[] = field_ui
@@ -30,30 +18,22 @@ dependencies[] = help
 dependencies[] = locale
 dependencies[] = menu
 dependencies[] = number
-; dependencies[] = openid
 dependencies[] = options
 dependencies[] = overlay
 dependencies[] = path
-; dependencies[] = php
-; dependencies[] = poll
 dependencies[] = rdf
 dependencies[] = search
 dependencies[] = shortcut
-; dependencies[] = simpletest
 dependencies[] = statistics
 dependencies[] = syslog
 dependencies[] = toolbar
-; dependencies[] = trigger
 dependencies[] = update
 
 dependencies[] = dashboard
 dependencies[] = image
 dependencies[] = list
 dependencies[] = taxonomy
-; dependencies[] = tracker
 dependencies[] = translation
-
-; dependencies[] = forum
 
 ;
 ; Contributed modules
@@ -81,7 +61,6 @@ dependencies[] = token
 dependencies[] = transliteration
 dependencies[] = variable
 dependencies[] = wysiwyg
-
 dependencies[] = auto_entitylabel
 dependencies[] = entity_token
 dependencies[] = entityreference
@@ -96,11 +75,10 @@ dependencies[] = quicktabs
 dependencies[] = strongarm
 dependencies[] = term_depth
 ; dependencies[] = variable_admin
-dependencies[] = variable_realms
+dependencies[] = variable_realm
 dependencies[] = variable_store
 dependencies[] = video_embed_field
 dependencies[] = views
-
 dependencies[] = commentsblock
 dependencies[] = entityreference_prepopulate
 dependencies[] = i18n_redirect
@@ -131,7 +109,6 @@ dependencies[] = views_conditional
 dependencies[] = views_content
 dependencies[] = views_field_view
 ; dependencies[] = views_ui
-
 dependencies[] = i18n_block
 dependencies[] = i18n_field
 dependencies[] = i18n_menu
@@ -145,19 +122,9 @@ dependencies[] = rules_i18n
 dependencies[] = rules_scheduler
 
 ;
-; Contributed themes
-;
-dependencies[] = bootstrap
-
-;
 ; Custom modules
 ;
 dependencies[] = issues_workflow
-
-;
-; Custom themes
-;
-dependencies[] = issues
 
 ;
 ; Features
