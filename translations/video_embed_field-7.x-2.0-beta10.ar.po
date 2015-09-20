@@ -1,10 +1,10 @@
-# Arabic translation of Video Embed Field (7.x-2.0-beta11)
+# Arabic translation of Video Embed Field (7.x-2.0-beta10)
 # Copyright (c) 2015 by the Arabic translation team
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Video Embed Field (7.x-2.0-beta11)\n"
-"POT-Creation-Date: 2015-09-08 06:40+0000\n"
+"Project-Id-Version: Video Embed Field (7.x-2.0-beta10)\n"
+"POT-Creation-Date: 2015-06-12 05:41+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Language-Team: Arabic\n"
 "MIME-Version: 1.0\n"
@@ -16,8 +16,6 @@ msgid "Content"
 msgstr "المحتوى"
 msgid "Description"
 msgstr "الوصف"
-msgid "Settings"
-msgstr "الإعدادات"
 msgid "Top"
 msgstr "الأعلى"
 msgid "<none>"

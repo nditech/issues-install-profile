@@ -10,7 +10,209 @@
  * Performs actions to set up the site for this profile.
  *
  * @see system_install()
- *
-function minimal_install() {
+ */
+function issues_profile_install() {
+  $admin_theme = 'seven';
+  $default_theme = 'issues';
+  // Enable themes.
+  $themes = array($admin_theme, 'bootstrap', $default_theme);
+  theme_enable($themes);
+  // Make seven the admin theme.
+  variable_set('admin_theme', $admin_theme);
+  variable_set('node_admin_theme', '0');
+  // MAke issues the default theme.
+  variable_set('theme_default', $default_theme);
+  db_update('system')
+    ->fields(array('weight' => '1'))
+    ->condition('name', $default_theme)
+    ->execute();
+
+  // Enable some blocks in the issues theme.
+  $blocks = array(
+    array(
+      'module' => 'system',
+      'delta' => 'main',
+      'theme' => $default_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'content',
+      'pages' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'search',
+      'delta' => 'form',
+      'theme' => $default_theme,
+      'status' => 1,
+      'weight' => -1,
+      'region' => 'sidebar_first',
+      'pages' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'node',
+      'delta' => 'recent',
+      'theme' => $admin_theme,
+      'status' => 1,
+      'weight' => 10,
+      'region' => 'dashboard_main',
+      'pages' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'user',
+      'delta' => 'login',
+      'theme' => $default_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'sidebar_first',
+      'pages' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'system',
+      'delta' => 'navigation',
+      'theme' => $default_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'sidebar_first',
+      'pages' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'system',
+      'delta' => 'powered-by',
+      'theme' => $default_theme,
+      'status' => 1,
+      'weight' => 10,
+      'region' => 'footer',
+      'pages' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'system',
+      'delta' => 'help',
+      'theme' => $default_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'help',
+      'pages' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'system',
+      'delta' => 'main',
+      'theme' => $admin_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'content',
+      'pages' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'system',
+      'delta' => 'help',
+      'theme' => $admin_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'help',
+      'pages' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'user',
+      'delta' => 'login',
+      'theme' => $admin_theme,
+      'status' => 1,
+      'weight' => 10,
+      'region' => 'content',
+      'pages' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'user',
+      'delta' => 'new',
+      'theme' => $admin_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'dashboard_sidebar',
+      'pages' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'search',
+      'delta' => 'form',
+      'theme' => $admin_theme,
+      'status' => 1,
+      'weight' => -10,
+      'region' => 'dashboard_sidebar',
+      'pages' => '',
+      'cache' => -1,
+    ),
+  );
+  $query = db_insert('block')->fields(array('module', 'delta', 'theme', 'status', 'weight', 'region', 'pages', 'cache'));
+  foreach ($blocks as $block) {
+    $query->values($block);
+  }
+  $query->execute();
+
+  // Get the language of the installation.
+  $langcode = (isset($_GET['locale'])) ? $_GET['locale'] : 'en';
+//  $default_language = variable_get('default_language', NULL);
+//  $langcode = (isset($default_language->language)) ? $default_language->language : LANGUAGE_NONE;
+
+  // Create the homepage.
+  // First create a new node object.
+  $node = new stdClass();
+  // Set the bundle type.
+  $node->type = 'page';
+  // Set the title.
+  $node->title = t('Homepage');
+  // Set the language of the node.
+  $node->language = $langcode;
+   // Set the node path.
+  $node->path = array('alias' => 'homepage');
+  // Set some default values.
+  node_object_prepare($node);
+  // Set the author/owner of the node.
+  $node->uid = 1;
+  // Let's add standard body field
+  $node->body[$node->language][0]['value'] = t('');
+  $node->body[$node->language][0]['summary'] = t('');
+  // Define the default plain_text format for the body field.
+  $node->body[$node->language][0]['format'] = 'full_html';
+  // Prepare node for a submit.
+  $node = node_submit($node);
+  // After the save we'll get a nid.
+  node_save($node);
+  // Clean up.
+  unset($node);
+
+  // Create the about page.
+  // First create a new node object.
+  $node = new stdClass();
+  // Set the bundle type.
+  $node->type = 'page';
+  // Set the title.
+  $node->title = t('About');
+  // Set the language.
+  $node->language = $langcode;
+   // Set the node path.
+  $node->path = array('alias' => 'about');
+  // Set some default values.
+  node_object_prepare($node);
+  // Set the author/owner of the node.
+  $node->uid = 1;
+  // Let's add standard body field
+  $node->body[$node->language][0]['value'] = t('Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas.
+  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas.');
+  $node->body[$node->language][0]['summary'] = t('');
+  // Define the default plain_text format for the body field.
+  $node->body[$node->language][0]['format'] = 'full_html';
+  // Prepare node for a submit.
+  $node = node_submit($node);
+   // After the save we'll get a nid.
+  node_save($node);
+  // Clean up.
+  unset($node);
 }
-*/

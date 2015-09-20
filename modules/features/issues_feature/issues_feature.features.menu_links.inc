@@ -10,17 +10,14 @@
 function issues_feature_menu_default_menu_links() {
   $menu_links = array();
 
-  // Exported menu link: main-menu_about:node/20
-  $menu_links['main-menu_about:node/20'] = array(
+  // Exported menu link: main-menu_about:node/2
+  $menu_links['main-menu_about:node/2'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'node/20',
+    'link_path' => 'node/2',
     'router_path' => 'node/%',
     'link_title' => 'About',
     'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-      'identifier' => 'main-menu_about:node/20',
+      'identifier' => 'main-menu_about:node/2',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -36,7 +33,7 @@ function issues_feature_menu_default_menu_links() {
   $menu_links['main-menu_ask-a-question:node/add/question'] = array(
     'menu_name' => 'main-menu',
     'link_path' => 'node/add/question',
-    'router_path' => 'node/add/question',
+    'router_path' => 'node/add',
     'link_title' => 'Ask a Question',
     'options' => array(
       'attributes' => array(

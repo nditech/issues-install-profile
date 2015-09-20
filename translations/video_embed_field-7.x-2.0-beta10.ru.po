@@ -1,10 +1,10 @@
-# Russian translation of Video Embed Field (7.x-2.0-beta11)
+# Russian translation of Video Embed Field (7.x-2.0-beta10)
 # Copyright (c) 2015 by the Russian translation team
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Video Embed Field (7.x-2.0-beta11)\n"
-"POT-Creation-Date: 2015-09-08 06:40+0000\n"
+"Project-Id-Version: Video Embed Field (7.x-2.0-beta10)\n"
+"POT-Creation-Date: 2015-06-12 05:42+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -16,8 +16,6 @@ msgid "Content"
 msgstr "Содержимое"
 msgid "Description"
 msgstr "Описание"
-msgid "Settings"
-msgstr "Настройки"
 msgid "Top"
 msgstr "Вверху"
 msgid "<none>"

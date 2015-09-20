@@ -124,8 +124,8 @@ projects[variable][subdir] = contrib
 projects[variable][version] = 2.5
 
 projects[video_embed_field][subdir] = contrib
-; projects[video_embed_field][version] = 2.0-beta10
-projects[video_embed_field][version] = 2.0-beta11
+projects[video_embed_field][version] = 2.0-beta10
+; projects[video_embed_field][version] = 2.0-beta11
 
 projects[views][subdir] = contrib
 projects[views][version] = 3.11
@@ -135,6 +135,7 @@ projects[views_conditional][subdir] = contrib
 projects[views_conditional][version] = 1.3
 
 projects[views_field_view][subdir] = contrib
+; projects[views_field_view][version] = 1.1
 projects[views_field_view][version] = 1.2
 
 projects[wysiwyg][subdir] = contrib
@@ -151,7 +152,7 @@ projects[bootstrap][version] = 3.0
 ; Libraries
 
 libraries[ckeditor][download][type] = get
-libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor 4.4.5/ckeditor_4.4.5_standard.zip"
+libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%203.6.6.2/ckeditor_3.6.6.2.zip"
 libraries[ckeditor][destination] = libraries
 libraries[ckeditor][directory_name] = ckeditor
 
