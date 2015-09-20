@@ -135,7 +135,7 @@ projects[views_conditional][subdir] = contrib
 projects[views_conditional][version] = 1.3
 
 projects[views_field_view][subdir] = contrib
-projects[views_field_view][version] = 1.1
+projects[views_field_view][version] = 1.2
 
 projects[wysiwyg][subdir] = contrib
 projects[wysiwyg][version] = 2.2
@@ -171,6 +171,6 @@ libraries[owlcarousel][destination] = libraries
 libraries[owlcarousel][directory_name] = owl-carousel
 
 libraries[respondjs][download][type] = get
-libraries[respondjs][download][url] = "http://github.com/scottjehl/Respond/archive/master.zip"
+libraries[respondjs][download][url] = "http://raw.githubusercontent.com/scottjehl/Respond/master/dest/respond.min.js"
 libraries[respondjs][destination] = libraries
 libraries[respondjs][directory_name] = respondjs

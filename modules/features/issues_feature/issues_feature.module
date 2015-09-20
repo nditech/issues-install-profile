@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Code for the Issues Feature feature.
+ * Code for the Issues feature feature.
  */
 
 include_once 'issues_feature.features.inc';

@@ -1488,6 +1488,69 @@ function issues_feature_views_default_views() {
   $export['comment_count'] = $view;
 
   $view = new view();
+  $view->name = 'comments';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Comments';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Comments';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Comment count */
+  $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
+  $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
+  $handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
+  $handler->display->display_options['fields']['comment_count']['label'] = '';
+  $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: SUM(Content: Comment count) */
+  $handler->display->display_options['fields']['comment_count_1']['id'] = 'comment_count_1';
+  $handler->display->display_options['fields']['comment_count_1']['table'] = 'node_comment_statistics';
+  $handler->display->display_options['fields']['comment_count_1']['field'] = 'comment_count';
+  $handler->display->display_options['fields']['comment_count_1']['group_type'] = 'sum';
+  $handler->display->display_options['fields']['comment_count_1']['label'] = '';
+  $handler->display->display_options['fields']['comment_count_1']['element_label_colon'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'answer' => 'answer',
+    'question' => 'question',
+  );
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $export['comments'] = $view;
+
+  $view = new view();
   $view->name = 'issues';
   $view->description = '';
   $view->tag = 'default';
@@ -3009,12 +3072,23 @@ function issues_feature_views_default_views() {
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'col-md-4';
+  $handler->display->display_options['style_options']['row_class'] = '.col-xs-6 col-md-4 [type]';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'There are no results.';
+  $handler->display->display_options['empty']['area']['format'] = 'full_html';
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_candidate_target_id']['id'] = 'field_candidate_target_id';
   $handler->display->display_options['relationships']['field_candidate_target_id']['table'] = 'field_data_field_candidate';
   $handler->display->display_options['relationships']['field_candidate_target_id']['field'] = 'field_candidate_target_id';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_question_target_id']['id'] = 'field_question_target_id';
+  $handler->display->display_options['relationships']['field_question_target_id']['table'] = 'field_data_field_question';
+  $handler->display->display_options['relationships']['field_question_target_id']['field'] = 'field_question_target_id';
   /* Field: Content: Photo */
   $handler->display->display_options['fields']['field_photo_1']['id'] = 'field_photo_1';
   $handler->display->display_options['fields']['field_photo_1']['table'] = 'field_data_field_photo';
@@ -3028,6 +3102,23 @@ function issues_feature_views_default_views() {
     'image_style' => 'candidate_answer_photo',
     'image_link' => '',
   );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
+  $handler->display->display_options['fields']['title_1']['table'] = 'node';
+  $handler->display->display_options['fields']['title_1']['field'] = 'title';
+  $handler->display->display_options['fields']['title_1']['relationship'] = 'field_candidate_target_id';
+  $handler->display->display_options['fields']['title_1']['label'] = '';
+  $handler->display->display_options['fields']['title_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title_2']['id'] = 'title_2';
+  $handler->display->display_options['fields']['title_2']['table'] = 'node';
+  $handler->display->display_options['fields']['title_2']['field'] = 'title';
+  $handler->display->display_options['fields']['title_2']['relationship'] = 'field_question_target_id';
+  $handler->display->display_options['fields']['title_2']['label'] = '';
+  $handler->display->display_options['fields']['title_2']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_2']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['title_2']['element_label_colon'] = FALSE;
   /* Field: Content: Path */
   $handler->display->display_options['fields']['path']['id'] = 'path';
   $handler->display->display_options['fields']['path']['table'] = 'node';
@@ -3042,7 +3133,6 @@ function issues_feature_views_default_views() {
   $handler->display->display_options['fields']['type']['label'] = '';
   $handler->display->display_options['fields']['type']['exclude'] = TRUE;
   $handler->display->display_options['fields']['type']['element_type'] = '0';
-  $handler->display->display_options['fields']['type']['element_label_type'] = '0';
   $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['type']['element_wrapper_type'] = '0';
   /* Field: Content: Title */
@@ -3062,6 +3152,7 @@ function issues_feature_views_default_views() {
   $handler->display->display_options['fields']['field_photo']['field'] = 'field_photo';
   $handler->display->display_options['fields']['field_photo']['label'] = '';
   $handler->display->display_options['fields']['field_photo']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_photo']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_photo']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_photo']['settings'] = array(
     'image_style' => 'candidate_answer_photo',
@@ -3091,23 +3182,73 @@ function issues_feature_views_default_views() {
   $handler->display->display_options['fields']['field_soundcloud_audio']['alter']['text'] = '<a href="[path]"><i class="fa fa-headphones"></i>[field_photo_1]</a>';
   $handler->display->display_options['fields']['field_soundcloud_audio']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_soundcloud_audio']['hide_empty'] = TRUE;
+  /* Field: Views: Views Conditional */
+  $handler->display->display_options['fields']['views_conditional']['id'] = 'views_conditional';
+  $handler->display->display_options['fields']['views_conditional']['table'] = 'views_conditional';
+  $handler->display->display_options['fields']['views_conditional']['field'] = 'views_conditional';
+  $handler->display->display_options['fields']['views_conditional']['label'] = '';
+  $handler->display->display_options['fields']['views_conditional']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['views_conditional']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['views_conditional']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['views_conditional']['if'] = 'field_video';
+  $handler->display->display_options['fields']['views_conditional']['condition'] = '5';
+  $handler->display->display_options['fields']['views_conditional']['then'] = '[field_photo_1]';
+  $handler->display->display_options['fields']['views_conditional']['strip_tags'] = 0;
+  /* Field: Views: Views Conditional */
+  $handler->display->display_options['fields']['views_conditional_1']['id'] = 'views_conditional_1';
+  $handler->display->display_options['fields']['views_conditional_1']['table'] = 'views_conditional';
+  $handler->display->display_options['fields']['views_conditional_1']['field'] = 'views_conditional';
+  $handler->display->display_options['fields']['views_conditional_1']['label'] = '';
+  $handler->display->display_options['fields']['views_conditional_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['views_conditional_1']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['views_conditional_1']['if'] = 'field_soundcloud_audio';
+  $handler->display->display_options['fields']['views_conditional_1']['condition'] = '5';
+  $handler->display->display_options['fields']['views_conditional_1']['then'] = '<a href="[path]">[views_conditional]</a>';
+  $handler->display->display_options['fields']['views_conditional_1']['strip_tags'] = 0;
   /* Field: Content: Logo */
   $handler->display->display_options['fields']['field_logo']['id'] = 'field_logo';
   $handler->display->display_options['fields']['field_logo']['table'] = 'field_data_field_logo';
   $handler->display->display_options['fields']['field_logo']['field'] = 'field_logo';
   $handler->display->display_options['fields']['field_logo']['label'] = '';
   $handler->display->display_options['fields']['field_logo']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_logo']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_logo']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_logo']['settings'] = array(
     'image_style' => 'candidate_answer_photo',
     'image_link' => 'content',
   );
+  /* Field: Views: Views Conditional */
+  $handler->display->display_options['fields']['views_conditional_2']['id'] = 'views_conditional_2';
+  $handler->display->display_options['fields']['views_conditional_2']['table'] = 'views_conditional';
+  $handler->display->display_options['fields']['views_conditional_2']['field'] = 'views_conditional';
+  $handler->display->display_options['fields']['views_conditional_2']['label'] = 'By';
+  $handler->display->display_options['fields']['views_conditional_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['views_conditional_2']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['views_conditional_2']['if'] = 'type';
+  $handler->display->display_options['fields']['views_conditional_2']['condition'] = '1';
+  $handler->display->display_options['fields']['views_conditional_2']['equalto'] = 'Answer';
+  $handler->display->display_options['fields']['views_conditional_2']['then'] = '[title_1]';
+  $handler->display->display_options['fields']['views_conditional_2']['strip_tags'] = 0;
+  /* Field: Views: Views Conditional */
+  $handler->display->display_options['fields']['views_conditional_3']['id'] = 'views_conditional_3';
+  $handler->display->display_options['fields']['views_conditional_3']['table'] = 'views_conditional';
+  $handler->display->display_options['fields']['views_conditional_3']['field'] = 'views_conditional';
+  $handler->display->display_options['fields']['views_conditional_3']['label'] = 'Question';
+  $handler->display->display_options['fields']['views_conditional_3']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['views_conditional_3']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['views_conditional_3']['if'] = 'type';
+  $handler->display->display_options['fields']['views_conditional_3']['condition'] = '1';
+  $handler->display->display_options['fields']['views_conditional_3']['equalto'] = 'Answer';
+  $handler->display->display_options['fields']['views_conditional_3']['then'] = '[title_2]';
+  $handler->display->display_options['fields']['views_conditional_3']['strip_tags'] = 0;
   /* Field: Content: Description */
   $handler->display->display_options['fields']['field_body']['id'] = 'field_body';
   $handler->display->display_options['fields']['field_body']['table'] = 'field_data_field_body';
   $handler->display->display_options['fields']['field_body']['field'] = 'field_body';
   $handler->display->display_options['fields']['field_body']['label'] = '';
+  $handler->display->display_options['fields']['field_body']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_body']['alter']['max_length'] = '200';
+  $handler->display->display_options['fields']['field_body']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['field_body']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['field_body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_body']['hide_empty'] = TRUE;
@@ -3116,7 +3257,9 @@ function issues_feature_views_default_views() {
   $handler->display->display_options['fields']['field_short_summary']['table'] = 'field_data_field_short_summary';
   $handler->display->display_options['fields']['field_short_summary']['field'] = 'field_short_summary';
   $handler->display->display_options['fields']['field_short_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_short_summary']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_short_summary']['alter']['max_length'] = '200';
+  $handler->display->display_options['fields']['field_short_summary']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['field_short_summary']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['field_short_summary']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_short_summary']['hide_empty'] = TRUE;
@@ -3143,11 +3286,26 @@ function issues_feature_views_default_views() {
     'party' => 'party',
     'question' => 'question',
   );
+  /* Filter criterion: Search: Search Terms */
+  $handler->display->display_options['filters']['keys']['id'] = 'keys';
+  $handler->display->display_options['filters']['keys']['table'] = 'search_index';
+  $handler->display->display_options['filters']['keys']['field'] = 'keys';
+  $handler->display->display_options['filters']['keys']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['keys']['expose']['operator_id'] = 'keys_op';
+  $handler->display->display_options['filters']['keys']['expose']['label'] = 'Search';
+  $handler->display->display_options['filters']['keys']['expose']['operator'] = 'keys_op';
+  $handler->display->display_options['filters']['keys']['expose']['identifier'] = 'keys';
+  $handler->display->display_options['filters']['keys']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    3 => 0,
+  );
 
   /* Display: Search Page */
   $handler = $view->new_display('page', 'Search Page', 'page');
   $handler->display->display_options['exposed_block'] = TRUE;
-  $handler->display->display_options['path'] = 'search';
+  $handler->display->display_options['path'] = 'search-page';
   $export['search'] = $view;
 
   return $export;

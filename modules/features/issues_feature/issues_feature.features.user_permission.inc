@@ -161,6 +161,13 @@ function issues_feature_user_default_permissions() {
     'module' => 'path',
   );
 
+  // Exported permission: 'delete any answer content'.
+  $permissions['delete any answer content'] = array(
+    'name' => 'delete any answer content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: 'delete any candidate content'.
   $permissions['delete any candidate content'] = array(
     'name' => 'delete any candidate content',

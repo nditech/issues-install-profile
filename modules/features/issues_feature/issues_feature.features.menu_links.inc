@@ -117,6 +117,28 @@ function issues_feature_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
   );
+  // Exported menu link: main-menu_search:search-page
+  $menu_links['main-menu_search:search-page'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'search-page',
+    'router_path' => 'search-page',
+    'link_title' => 'Search',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_search:search-page',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 1,
+    'language' => 'und',
+    'menu_links_customized' => 1,
+  );
 
   // Translatables
   // Included for use with string extractors like potx.
@@ -125,6 +147,7 @@ function issues_feature_menu_default_menu_links() {
   t('Candidates');
   t('Issues');
   t('Parties');
+  t('Search');
 
   return $menu_links;
 }
