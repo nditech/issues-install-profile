@@ -1,10 +1,10 @@
-# Arabic translation of MailChimp (7.x-3.6)
+# Arabic translation of MailChimp (7.x-3.4)
 # Copyright (c) 2015 by the Arabic translation team
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: MailChimp (7.x-3.6)\n"
-"POT-Creation-Date: 2015-09-13 07:01+0000\n"
+"Project-Id-Version: MailChimp (7.x-3.4)\n"
+"POT-Creation-Date: 2015-06-22 06:26+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Language-Team: Arabic\n"
 "MIME-Version: 1.0\n"
@@ -32,8 +32,6 @@ msgid "Subject"
 msgstr "الموضوع"
 msgid "Actions"
 msgstr "الإجراءات"
-msgid "disabled"
-msgstr "معطَّل"
 msgid "Cancel"
 msgstr "إلغاء"
 msgid "Subscribe"

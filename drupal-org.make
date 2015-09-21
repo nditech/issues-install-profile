@@ -12,6 +12,9 @@ projects[auto_entitylabel][version] = 1.3
 projects[block_class][subdir] = contrib
 projects[block_class][version] = 2.1
 
+projects[block_export_import][subdir] = contrib
+projects[block_export_import][version] = 2.31
+
 projects[commentsblock][subdir] = contrib
 projects[commentsblock][version] = 2.5
 
@@ -35,6 +38,9 @@ projects[entityreference_prepopulate][version] = 1.5
 
 projects[features][subdir] = contrib
 projects[features][version] = 2.6
+
+projects[features_extra][subdir] = contrib
+projects[features_extra][version] = 1.0
 
 projects[field_group][subdir] = contrib
 projects[field_group][version] = 1.4
@@ -73,8 +79,8 @@ projects[link][subdir] = contrib
 projects[link][version] = 1.3
 
 projects[mailchimp][subdir] = contrib
-; projects[mailchimp][version] = 3.4
-projects[mailchimp][version] = 3.6
+projects[mailchimp][version] = 3.4
+; projects[mailchimp][version] = 3.6
 
 projects[metatag][subdir] = contrib
 projects[metatag][version] = 1.7
@@ -135,8 +141,8 @@ projects[views_conditional][subdir] = contrib
 projects[views_conditional][version] = 1.3
 
 projects[views_field_view][subdir] = contrib
-; projects[views_field_view][version] = 1.1
-projects[views_field_view][version] = 1.2
+projects[views_field_view][version] = 1.1
+; projects[views_field_view][version] = 1.2
 
 projects[wysiwyg][subdir] = contrib
 projects[wysiwyg][version] = 2.2

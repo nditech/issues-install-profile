@@ -28,7 +28,6 @@ dependencies[] = statistics
 dependencies[] = syslog
 dependencies[] = toolbar
 dependencies[] = update
-
 dependencies[] = dashboard
 dependencies[] = image
 dependencies[] = list
@@ -40,6 +39,7 @@ dependencies[] = translation
 ;
 dependencies[] = addtoany
 dependencies[] = block_class
+dependencies[] = block_export_import
 dependencies[] = ctools
 dependencies[] = eim
 dependencies[] = entity
@@ -64,6 +64,7 @@ dependencies[] = wysiwyg
 dependencies[] = auto_entitylabel
 dependencies[] = entity_token
 dependencies[] = entityreference
+dependencies[] = fe_block
 dependencies[] = field_group
 dependencies[] = i18n
 dependencies[] = imce_wysiwyg

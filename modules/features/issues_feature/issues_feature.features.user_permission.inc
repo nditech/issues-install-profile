@@ -507,17 +507,6 @@ function issues_feature_user_default_permissions() {
     'module' => 'statistics',
   );
 
-  // Exported permission: 'view taxonomy term post access counter'.
-  $permissions['view taxonomy term post access counter'] = array(
-    'name' => 'view taxonomy term post access counter',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'taxonomy_term_statistics',
-  );
-
   // Exported permission: 'view the administration theme'.
   $permissions['view the administration theme'] = array(
     'name' => 'view the administration theme',
