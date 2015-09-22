@@ -37,7 +37,7 @@ function issues_profile_init() {
 
 function issues_profile_create_front_page() {
   // Get the default language of the installation.
-  $default_language = variable_get('default_language', LANGUAGE_NONE);
+  $default_language = language_default();
   $langcode = $default_language->language;
 
   // Create the homepage.

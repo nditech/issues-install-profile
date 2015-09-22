@@ -129,7 +129,7 @@ $logo_alt = $logo_array[0]['alt'];
         <?php print render ($content['field_photo']); ?>
     </div>
     <div class="col-md-3">
-        <img src="/sites/default/files/<?php print render ($logo_url); ?>" alt="<?php print render ($logo_alt); ?>"/>
+        <img src="../sites/default/files/<?php print render ($logo_url); ?>" alt="<?php print render ($logo_alt); ?>"/>
     </div>
   </div>
    

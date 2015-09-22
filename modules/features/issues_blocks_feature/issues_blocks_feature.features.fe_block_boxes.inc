@@ -14,7 +14,7 @@ function issues_blocks_feature_default_fe_block_boxes() {
   $fe_block_boxes->info = 'Ask a Question button';
   $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'block_ask_a_question';
-  $fe_block_boxes->body = '<p style="text-align: center;"><a class="question-button" href="/node/add/question">Ask a Question</a></p>
+  $fe_block_boxes->body = '<p style="text-align: center;"><a class="question-button" href="node/add/question">Ask a Question</a></p>
 ';
 
   $export['block_ask_a_question'] = $fe_block_boxes;

@@ -1891,6 +1891,7 @@ function issues_feature_views_default_views() {
   $handler->display->display_options['fields']['field_video']['label'] = '';
   $handler->display->display_options['fields']['field_video']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_video']['click_sort_column'] = 'video_url';
+  $handler->display->display_options['fields']['field_video']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_video']['settings'] = array(
     'video_style' => 'normal',
   );
@@ -1900,12 +1901,14 @@ function issues_feature_views_default_views() {
   $handler->display->display_options['fields']['field_soundcloud_audio']['field'] = 'field_soundcloud_audio';
   $handler->display->display_options['fields']['field_soundcloud_audio']['label'] = '';
   $handler->display->display_options['fields']['field_soundcloud_audio']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_soundcloud_audio']['exclude'] = TRUE;
   /* Field: Content: Description */
   $handler->display->display_options['fields']['field_body']['id'] = 'field_body';
   $handler->display->display_options['fields']['field_body']['table'] = 'field_data_field_body';
   $handler->display->display_options['fields']['field_body']['field'] = 'field_body';
   $handler->display->display_options['fields']['field_body']['label'] = '';
   $handler->display->display_options['fields']['field_body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_body']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_body']['type'] = 'text_plain';
   /* Field: Views: Views Conditional */
   $handler->display->display_options['fields']['views_conditional_1']['id'] = 'views_conditional_1';
@@ -2155,7 +2158,7 @@ function issues_feature_views_default_views() {
   $handler->display->display_options['filters']['nid']['id'] = 'nid';
   $handler->display->display_options['filters']['nid']['table'] = 'node';
   $handler->display->display_options['filters']['nid']['field'] = 'nid';
-  $handler->display->display_options['filters']['nid']['value']['value'] = '20';
+  $handler->display->display_options['filters']['nid']['value']['value'] = '2';
   $export['partners'] = $view;
 
   $view = new view();
