@@ -12,9 +12,6 @@ projects[auto_entitylabel][version] = 1.3
 projects[block_class][subdir] = contrib
 projects[block_class][version] = 2.1
 
-projects[block_export_import][subdir] = contrib
-projects[block_export_import][version] = 2.31
-
 projects[commentsblock][subdir] = contrib
 projects[commentsblock][version] = 2.5
 

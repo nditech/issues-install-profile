@@ -39,7 +39,6 @@ dependencies[] = translation
 ;
 dependencies[] = addtoany
 dependencies[] = block_class
-dependencies[] = block_export_import
 dependencies[] = ctools
 dependencies[] = eim
 dependencies[] = entity
@@ -130,7 +129,13 @@ dependencies[] = issues_workflow
 ;
 ; Features
 ;
-dependencies[] = issues_feature
+; We'll have to postpone this until after the regular install. There are some
+; issues with the block settings and the menu links caused by the fact that
+; theme regions and pathauto settings are not written to the database yet.
+;
+; dependencies[] = issues_feature
+; dependencies[] = issues_blocks_feature
+; dependencies[] = issues_menu_feature
 
 ;
 ; Files

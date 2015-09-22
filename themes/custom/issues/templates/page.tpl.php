@@ -57,6 +57,7 @@
  * Regions:
  * - $page['help']: Dynamic help text, mostly for admin pages.
  * - $page['highlighted']: Items for the highlighted content region.
+* - $page['below_navbar']: Items for the below navbar content region.
  * - $page['content']: The main content of the current page.
  * - $page['sidebar_first']: Items for the first sidebar.
  * - $page['sidebar_second']: Items for the second sidebar.
@@ -122,8 +123,15 @@
             <?php print render($page['navigation']); ?>
           <?php endif; ?>
         </nav>
-      </div></div>
+      </div>
+     </div>
     <?php endif; ?>
+    <?php if (!empty($page['below_navbar'])): ?>
+    <div class="below-navbar">
+		<?php print render($page['below_navbar']); ?>
+    </div>
+    <?php endif; ?>
+    
 </header>
  <?php if (!empty($page['highlighted'])): ?>
         <div class="highlighted jumbotron">
@@ -182,9 +190,11 @@
   <?php print render($page['footer']); ?>
   </div>
 </footer>
+<?php if (!empty($page['below_footer'])): ?>
 <div class="below-footer">
   <div class="container">
   <?php print render($page['below_footer']); ?>
   </div>
 </div>
+<?php endif; ?>
 

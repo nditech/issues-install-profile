@@ -124,6 +124,12 @@
         </nav>
       </div></div>
     <?php endif; ?>
+    <?php if (!empty($page['below_navbar'])): ?>
+    <div class="below-navbar">
+                <?php print render($page['below_navbar']); ?>
+    </div>
+    <?php endif; ?>
+
 </header>
  <?php if (!empty($page['highlighted'])): ?>
         <div class="highlighted jumbotron">

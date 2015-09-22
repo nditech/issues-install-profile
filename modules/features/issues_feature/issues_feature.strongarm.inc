@@ -9206,13 +9206,6 @@ function issues_feature_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'social_stats_next_execution';
-  $strongarm->value = 1442903099;
-  $export['social_stats_next_execution'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'social_stats_options';
   $strongarm->value = '0';
   $export['social_stats_options'] = $strongarm;
@@ -9248,13 +9241,6 @@ function issues_feature_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'statistics_day_timestamp';
-  $strongarm->value = 1442816699;
-  $export['statistics_day_timestamp'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'statistics_enable_access_log';
   $strongarm->value = 0;
   $export['statistics_enable_access_log'] = $strongarm;
@@ -9269,9 +9255,16 @@ function issues_feature_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'taxonomy_term_statistics_day_timestamp';
-  $strongarm->value = 1442789073;
-  $export['taxonomy_term_statistics_day_timestamp'] = $strongarm;
+  $strongarm->name = 'taxonomy_term_statistics_count_content_views';
+  $strongarm->value = 1;
+  $export['taxonomy_term_statistics_count_content_views'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_term_statistics_count_content_views_ajax';
+  $strongarm->value = 0;
+  $export['taxonomy_term_statistics_count_content_views_ajax'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

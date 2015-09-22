@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * issues_feature.features.menu_custom.inc
+ * issues_menu_feature.features.menu_custom.inc
  */
 
 /**
  * Implements hook_menu_default_menu_custom().
  */
-function issues_feature_menu_default_menu_custom() {
+function issues_menu_feature_menu_default_menu_custom() {
   $menus = array();
 
   // Exported menu: main-menu.

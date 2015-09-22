@@ -79,20 +79,11 @@ html, body {
 }
 
 .owl-theme .owl-controls .owl-buttons .owl-prev {
-  margin-left: 40px;
-  margin-right: 0px;
+  margin-left:40px;
 }
 
-.owl-theme .owl-controls .owl-buttons div:after {
-  content:'\f105';
-}
-
-.owl-theme .owl-controls .owl-buttons div:nth-of-type(1):after {
-  content:'\f105';
-}
-
-.owl-theme .owl-controls .owl-buttons div:nth-of-type(2):after {
-  content:'\f104';
+.owl-carousel .owl-item {
+  float: right;
 }
 /*END OWL CAROUSEL*/
 
@@ -177,11 +168,6 @@ ul.navbar-nav li {
 
 ul.navbar-nav li.expanded, ul.navbar-nav li.collapsed, ul.navbar-nav li.leaf {
   padding: 0;
-}
-
-.view-answers .field-content i {
-  right: 20px;
-  left: auto;
 }
 
 /*SEARCH* /

@@ -12,6 +12,17 @@
  * @see system_install()
  */
 function issues_profile_install() {
+  // Create the user administrator role and assign all permissions to it.
+  // First create the new role
+  $admin_role = new stdClass();
+  $admin_role->name = 'administrator';
+  $admin_role->weight = 2;
+  user_role_save($admin_role);
+  // Then grant it all permissions.
+  user_role_grant_permissions($admin_role->rid, array_keys(module_invoke_all('permission')));
+  // Also save it to the variables table.
+  variable_set('user_admin_role', $admin_role->rid);
+
   $admin_theme = 'seven';
   $default_theme = 'issues';
   // Enable themes.
@@ -27,63 +38,155 @@ function issues_profile_install() {
     ->condition('name', $default_theme)
     ->execute();
 
-  // Get the language of the installation.
-  $langcode = (isset($_GET['locale'])) ? $_GET['locale'] : 'en';
-//  $default_language = variable_get('default_language', NULL);
-//  $langcode = (isset($default_language->language)) ? $default_language->language : LANGUAGE_NONE;
+  // Clear all caches.
+  drupal_flush_all_caches();
+  // Rebuild the registry;
+  registry_rebuild();
+}
 
-  // Create the homepage.
-  // First create a new node object.
-  $node = new stdClass();
-  // Set the bundle type.
-  $node->type = 'page';
-  // Set the title.
-  $node->title = t('Homepage');
-  // Set the language of the node.
-  $node->language = $langcode;
-   // Set the node path.
-  $node->path = array('alias' => 'homepage');
-  // Set some default values.
-  node_object_prepare($node);
-  // Set the author/owner of the node.
-  $node->uid = 1;
-  // Let's add standard body field
-  $node->body[$node->language][0]['value'] = t('');
-  $node->body[$node->language][0]['summary'] = t('');
-  // Define the default plain_text format for the body field.
-  $node->body[$node->language][0]['format'] = 'full_html';
-  // Prepare node for a submit.
-  $node = node_submit($node);
-  // After the save we'll get a nid.
-  node_save($node);
-  // Clean up.
-  unset($node);
+/**
+ * Implements hook_install_tasks().
+ */
+function issues_profile_install_tasks(&$install_state) {
+  // Remove any status messages that might have been set. They are  not needed.
+  drupal_get_messages('status', TRUE);
 
-  // Create the about page.
-  // First create a new node object.
-  $node = new stdClass();
-  // Set the bundle type.
-  $node->type = 'page';
-  // Set the title.
-  $node->title = t('About');
-  // Set the language.
-  $node->language = $langcode;
-   // Set the node path.
-  $node->path = array('alias' => 'about');
-  // Set some default values.
-  node_object_prepare($node);
-  // Set the author/owner of the node.
-  $node->uid = 1;
-  // Let's add standard body field
-  $node->body[$node->language][0]['value'] = t('Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas.
-  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas.');
-  $node->body[$node->language][0]['summary'] = t('');
-  // Define the default plain_text format for the body field.
-  $node->body[$node->language][0]['format'] = 'full_html';
-  // Prepare node for a submit.
-  $node = node_submit($node);
-   // After the save we'll get a nid.
-  node_save($node);
-  // Clean up.
-  unset($node);
+  $tasks = array();
+  $tasks['issues_profile_install_additional_modules'] = array(
+    'display_name' => st('Install additional functionality'),
+    'display' => FALSE,
+    'type' => 'normal',
+  );
+
+  return $tasks;
+}
+
+/**
+ * Implements hook_install_tasks_alter().
+ */
+function issues_profile_install_tasks_alter(&$tasks, $install_state) {
+  // Override the install_finished task with our own.
+  $tasks['install_finished']['function'] = 'issues_profile_install_finished';
+
+  // The "Welcome" screen needs to come after the first two steps
+  // (profile and language selection).
+  $new_task['issues_profile_install_welcome'] = array(
+    'display' => TRUE,
+    'display_name' => st('Welcome'),
+    'type' => 'form',
+    'run' => isset($install_state['parameters']['welcome']) ? INSTALL_TASK_SKIP : INSTALL_TASK_RUN_IF_REACHED,
+  );
+  $old_tasks = $tasks;
+  $tasks = array_slice($old_tasks, 0, 2) + $new_task + array_slice($old_tasks, 2);
+}
+
+/**
+ * Task callback: shows the welcome screen.
+ */
+function issues_profile_install_welcome($form, &$form_state, &$install_state) {
+  drupal_set_title(st('Welcome to The Issues Tool'));
+  $message = '<p>' . st('Thank you for choosing The Issues Tool.') . '</p>';
+  $form = array();
+  $form['welcome_message'] = array(
+    '#markup' => $message,
+  );
+  $form['actions'] = array(
+    '#type' => 'actions',
+  );
+  $form['actions']['submit'] = array(
+    '#type' => 'submit',
+    '#value' => st("Install The Issues Tool"),
+    '#weight' => 10,
+  );
+  return $form;
+}
+
+function issues_profile_install_welcome_submit($form, &$form_state) {
+  global $install_state;
+
+  $install_state['parameters']['welcome'] = 'done';
+}
+
+/**
+ * Task callback: uses Batch API to enable modules.
+ * 
+ * Installs the issues feature.
+ */
+function issues_profile_install_additional_modules(&$install_state) {
+  $modules = array(
+    'issues_feature',
+  );
+  // Enable the modules.
+  module_enable($modules, FALSE);
+
+  // Clear all caches.
+  drupal_flush_all_caches();
+  // Rebuild the registry;
+  registry_rebuild();
+}
+
+/**
+ * Custom installation task; perform final steps and redirect the user to the
+ * new site if there are no errors.
+ *
+ * @param $install_state
+ *   An array of information about the current installation state.
+ *
+ * @return
+ *   A message informing the user about errors if there were some.
+ */
+function issues_profile_install_finished(&$install_state) {
+  drupal_set_title(st('@issues installation complete', array('@issues' => 'The Issues Tool')), PASS_THROUGH);
+  $messages = drupal_set_message();
+
+  // Remember the profile which was used.
+  variable_set('install_profile', drupal_get_profile());
+  variable_set('install_task', 'done');
+
+  // Rebuild the node access permissions.
+  node_access_rebuild();
+
+  // Flush all caches to ensure that any full bootstraps during the installation
+  // do not leave stale cached data, and that any content types or other items
+  // registered by the installation profile are registered correctly.
+  drupal_flush_all_caches();
+
+  // Install profiles are always loaded last
+  db_update('system')
+    ->fields(array('weight' => 1000))
+    ->condition('type', 'module')
+    ->condition('name', drupal_get_profile())
+    ->execute();
+  
+  // Cache a fully-built schema.
+  drupal_get_schema(NULL, TRUE);
+
+  // We did not enable the issues_blocks_feature and the
+  // issues_menu_feature in function devtac_install_additional_modules().
+  // Instead we decided to put a marker in the database to do a menu rebuild
+  // later and enable the module later. Setting the marker here and now.
+  variable_set('issues_profile_menu_rebuild_needed', TRUE);
+
+  if (isset($messages['error'])) {
+    $output = '<p>' . (isset($messages['error']) ? st('Review the messages above before visiting <a href="@url">your new site</a>.', array('@url' => url(''))) : st('<a href="@url">Visit your new site</a>.', array('@url' => url('')))) . '</p>';
+    return $output;
+  }
+  else {
+    // Since any module can add a drupal_set_message, this can bug the user.
+    // For a better user experience, remove all the message that are only
+    // "notifications".
+    drupal_get_messages('status', TRUE);
+    drupal_get_messages('completed', TRUE);
+    // Migrate adds its messages under the wrong type, see #1659150.
+    drupal_get_messages('ok', TRUE);
+
+    // If we don't install The Issues Tool using Drush, show some messages to
+    // the user.
+    if (!drupal_is_cli()) {
+      $output = '<p>' . st('Congratulations, you installed @issues!', array('@issues' => 'The Issues Tool')) . '</p>';
+      $output .= '<p>' . (isset($messages['error']) ? st('Review the messages above before visiting <a href="@url">your new site</a>.', array('@url' => url(''))) : st('<a href="@url">Visit your new site</a>.', array('@url' => url('')))) . '</p>';
+
+      return $output;
+    }
+  }
 }

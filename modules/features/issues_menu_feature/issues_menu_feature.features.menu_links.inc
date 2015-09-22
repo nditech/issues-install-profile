@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * issues_feature.features.menu_links.inc
+ * issues_menu_feature.features.menu_links.inc
  */
 
 /**
  * Implements hook_menu_default_menu_links().
  */
-function issues_feature_menu_default_menu_links() {
+function issues_menu_feature_menu_default_menu_links() {
   $menu_links = array();
 
   // Exported menu link: main-menu_about:node/2

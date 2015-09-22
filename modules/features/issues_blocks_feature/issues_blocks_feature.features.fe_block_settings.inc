@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * issues_feature.features.fe_block_settings.inc
+ * issues_blocks_feature.features.fe_block_settings.inc
  */
 
 /**
  * Implements hook_default_fe_block_settings().
  */
-function issues_feature_default_fe_block_settings() {
+function issues_blocks_feature_default_fe_block_settings() {
   $export = array();
 
   $export['version'] = '2.0';
@@ -43,7 +43,7 @@ function issues_feature_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'issues',
-        'weight' => -22,
+        'weight' => -25,
       ),
       'seven' => array(
         'region' => '',
@@ -84,7 +84,7 @@ function issues_feature_default_fe_block_settings() {
         'region' => 'highlighted',
         'status' => 1,
         'theme' => 'issues',
-        'weight' => 0,
+        'weight' => -24,
       ),
       'seven' => array(
         'region' => '',
@@ -169,7 +169,7 @@ function issues_feature_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'issues',
-        'weight' => -14,
+        'weight' => -16,
       ),
       'seven' => array(
         'region' => '',
@@ -251,7 +251,7 @@ function issues_feature_default_fe_block_settings() {
         'region' => 'highlighted',
         'status' => 1,
         'theme' => 'issues',
-        'weight' => -15,
+        'weight' => -25,
       ),
       'seven' => array(
         'region' => '',
@@ -336,7 +336,7 @@ function issues_feature_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'issues',
-        'weight' => -13,
+        'weight' => -15,
       ),
       'seven' => array(
         'region' => '',
@@ -623,7 +623,7 @@ function issues_feature_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'issues',
-        'weight' => -12,
+        'weight' => -14,
       ),
       'seven' => array(
         'region' => '',
@@ -632,8 +632,8 @@ function issues_feature_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
-    'visibility' => 0,
+    'title' => '<none>',
+    'visibility' => 1,
   );
 
   $export['search-form'] = array(
@@ -828,7 +828,7 @@ function issues_feature_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'issues',
-        'weight' => -21,
+        'weight' => -24,
       ),
       'seven' => array(
         'region' => 'content',
@@ -1240,7 +1240,7 @@ function issues_feature_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'issues',
-        'weight' => -17,
+        'weight' => -20,
       ),
       'seven' => array(
         'region' => '',
@@ -1283,7 +1283,7 @@ function issues_feature_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'issues',
-        'weight' => -18,
+        'weight' => -21,
       ),
       'seven' => array(
         'region' => '',
@@ -1326,7 +1326,7 @@ function issues_feature_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'issues',
-        'weight' => -15,
+        'weight' => -18,
       ),
       'seven' => array(
         'region' => '',
@@ -1369,7 +1369,7 @@ function issues_feature_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'issues',
-        'weight' => -19,
+        'weight' => -22,
       ),
       'seven' => array(
         'region' => '',
@@ -1390,7 +1390,9 @@ function issues_feature_default_fe_block_settings() {
     'i18n_block_language' => array(),
     'i18n_mode' => 0,
     'module' => 'views',
-    'node_types' => array(),
+    'node_types' => array(
+      0 => 'answer',
+    ),
     'pages' => '',
     'roles' => array(),
     'themes' => array(
@@ -1407,10 +1409,10 @@ function issues_feature_default_fe_block_settings() {
         'weight' => 0,
       ),
       'issues' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'content',
+        'status' => 1,
         'theme' => 'issues',
-        'weight' => 0,
+        'weight' => -17,
       ),
       'seven' => array(
         'region' => '',
@@ -1453,7 +1455,7 @@ function issues_feature_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'issues',
-        'weight' => -20,
+        'weight' => -23,
       ),
       'seven' => array(
         'region' => '',
@@ -1494,7 +1496,7 @@ function issues_feature_default_fe_block_settings() {
         'region' => 'highlighted',
         'status' => 1,
         'theme' => 'issues',
-        'weight' => 0,
+        'weight' => -21,
       ),
       'seven' => array(
         'region' => '',
@@ -1658,7 +1660,7 @@ function issues_feature_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'issues',
-        'weight' => -11,
+        'weight' => -13,
       ),
       'seven' => array(
         'region' => '',
@@ -1699,7 +1701,7 @@ function issues_feature_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'issues',
-        'weight' => -10,
+        'weight' => -12,
       ),
       'seven' => array(
         'region' => '',
@@ -1743,7 +1745,7 @@ function issues_feature_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'issues',
-        'weight' => -16,
+        'weight' => -19,
       ),
       'seven' => array(
         'region' => '',
@@ -1907,7 +1909,7 @@ function issues_feature_default_fe_block_settings() {
         'region' => 'highlighted',
         'status' => 1,
         'theme' => 'issues',
-        'weight' => 0,
+        'weight' => -23,
       ),
       'seven' => array(
         'region' => '',
@@ -1916,8 +1918,8 @@ function issues_feature_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
-    'visibility' => 0,
+    'title' => '<none>',
+    'visibility' => 1,
   );
 
   $export['views-questions-block_4'] = array(
@@ -1948,7 +1950,7 @@ function issues_feature_default_fe_block_settings() {
         'region' => 'highlighted',
         'status' => 1,
         'theme' => 'issues',
-        'weight' => 0,
+        'weight' => -22,
       ),
       'seven' => array(
         'region' => '',
@@ -1957,8 +1959,8 @@ function issues_feature_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
-    'visibility' => 0,
+    'title' => '<none>',
+    'visibility' => 1,
   );
 
   return $export;
