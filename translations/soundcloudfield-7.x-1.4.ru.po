@@ -1,10 +1,10 @@
 # Russian translation of SoundCloud field (7.x-1.4)
-# Copyright (c) 2015 by the Russian translation team
+# Copyright (c) 2014 by the Russian translation team
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: SoundCloud field (7.x-1.4)\n"
-"POT-Creation-Date: 2015-09-13 13:59+0000\n"
+"POT-Creation-Date: 2014-03-12 06:22+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -16,8 +16,6 @@ msgid "Link"
 msgstr "Ссылка"
 msgid "Width"
 msgstr "Ширина"
-msgid "Show comments"
-msgstr "Показать комментарии"
 msgid "Autoplay"
 msgstr "Автовоспроизведение"
 msgid "SoundCloud"

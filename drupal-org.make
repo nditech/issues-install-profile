@@ -141,6 +141,9 @@ projects[views_field_view][subdir] = contrib
 projects[views_field_view][version] = 1.1
 ; projects[views_field_view][version] = 1.2
 
+projects[vppr][subdir] = contrib
+projects[vppr][version] = 1.0
+
 projects[wysiwyg][subdir] = contrib
 projects[wysiwyg][version] = 2.2
 
