@@ -52,6 +52,12 @@ function issues_profile_install_tasks(&$install_state) {
   drupal_get_messages('status', TRUE);
 
   $tasks = array();
+
+  // Add batch process installing additional languages.
+  $tasks['issues_profile_install_additional_translations'] = array(
+    'display_name' => st('Install and import additional translations'),
+    'type' => 'batch',
+  );
   $tasks['issues_profile_install_additional_modules'] = array(
     'display_name' => st('Install additional functionality'),
     'display' => FALSE,
@@ -105,6 +111,41 @@ function issues_profile_install_welcome_submit($form, &$form_state) {
   global $install_state;
 
   $install_state['parameters']['welcome'] = 'done';
+}
+
+/**
+ * Installation task callback: creates batch process to enable additional
+ * languages and download relevant interface translations.
+ */
+function issues_profile_install_additional_translations(&$install_state) {
+  include_once DRUPAL_ROOT . '/includes/locale.inc';
+  module_load_include('check.inc', 'l10n_update');
+  module_load_include('batch.inc', 'l10n_update');
+
+  $langcodes = array(
+    'en' => 'en',
+    'ar' => 'ar',
+    'es' => 'es',
+    'fr' => 'fr',
+    'ru' => 'ru',
+  );
+  unset($langcodes[$install_state['locale']]);
+
+  // Prepare batch process to enable languages and download translations.
+  $operations = array();
+  foreach ($langcodes as $langcode) {
+    locale_add_language(strtolower($langcode));
+
+    // Build batch with l10n_update module.
+    $history = l10n_update_get_history();
+    $available = l10n_update_available_releases();
+    $updates = l10n_update_build_updates($history, $available);
+
+    $operations = array_merge($operations, _l10n_update_prepare_updates($updates, NULL, array()));
+  }
+
+  $batch = l10n_update_batch_multiple($operations, LOCALE_IMPORT_KEEP);
+  return $batch;
 }
 
 /**

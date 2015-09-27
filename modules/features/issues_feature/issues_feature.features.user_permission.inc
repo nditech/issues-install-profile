@@ -94,6 +94,26 @@ function issues_feature_user_default_permissions() {
     'module' => 'user',
   );
 
+  // Exported permission: 'administer comments'.
+  $permissions['administer comments'] = array(
+    'name' => 'administer comments',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
+    'module' => 'comment',
+  );
+
+  // Exported permission: 'administer topics vocabulary terms'.
+  $permissions['administer topics vocabulary terms'] = array(
+    'name' => 'administer topics vocabulary terms',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content manager' => 'content manager',
+    ),
+    'module' => 'vppr',
+  );
+
   // Exported permission: 'create answer content'.
   $permissions['create answer content'] = array(
     'name' => 'create answer content',
@@ -505,6 +525,18 @@ function issues_feature_user_default_permissions() {
       'content manager' => 'content manager',
     ),
     'module' => 'statistics',
+  );
+
+  // Exported permission: 'view taxonomy term post access counter'.
+  $permissions['view taxonomy term post access counter'] = array(
+    'name' => 'view taxonomy term post access counter',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+      'content manager' => 'content manager',
+    ),
+    'module' => 'taxonomy_term_statistics',
   );
 
   // Exported permission: 'view the administration theme'.
