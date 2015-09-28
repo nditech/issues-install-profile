@@ -8,4 +8,4 @@ includes[] = drupal-org-core.make
 projects[issues_profile][type] = "profile"
 projects[issues_profile][download][type] = "git"
 projects[issues_profile][download][branch] = "master"
-projects[issues_profile][download][url] = "http://github.com/nditech/issues-install-profile"
+projects[issues_profile][download][url] = "http://github.com/nditech/issues-install-profile.git"
