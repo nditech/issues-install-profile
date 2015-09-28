@@ -59,6 +59,7 @@ dependencies[] = taxonomy_term_statistics
 dependencies[] = token
 dependencies[] = transliteration
 dependencies[] = variable
+dependencies[] = vppr
 dependencies[] = wysiwyg
 dependencies[] = auto_entitylabel
 dependencies[] = entity_token

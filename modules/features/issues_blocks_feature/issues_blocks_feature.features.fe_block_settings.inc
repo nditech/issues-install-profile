@@ -18,7 +18,7 @@ function issues_blocks_feature_default_fe_block_settings() {
     'custom' => 0,
     'delta' => 'addtoany_button',
     'i18n_block_language' => array(),
-    'i18n_mode' => 0,
+    'i18n_mode' => 1,
     'module' => 'addtoany',
     'node_types' => array(
       0 => 'answer',
@@ -43,7 +43,7 @@ function issues_blocks_feature_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'issues',
-        'weight' => -25,
+        'weight' => -22,
       ),
       'seven' => array(
         'region' => '',
@@ -61,7 +61,7 @@ function issues_blocks_feature_default_fe_block_settings() {
     'css_class' => '',
     'custom' => 0,
     'i18n_block_language' => array(),
-    'i18n_mode' => 0,
+    'i18n_mode' => 1,
     'machine_name' => 'block_ask_a_question',
     'module' => 'block',
     'node_types' => array(),
@@ -84,7 +84,7 @@ function issues_blocks_feature_default_fe_block_settings() {
         'region' => 'highlighted',
         'status' => 1,
         'theme' => 'issues',
-        'weight' => -24,
+        'weight' => 0,
       ),
       'seven' => array(
         'region' => '',
@@ -102,7 +102,7 @@ function issues_blocks_feature_default_fe_block_settings() {
     'css_class' => '',
     'custom' => 0,
     'i18n_block_language' => array(),
-    'i18n_mode' => 0,
+    'i18n_mode' => 1,
     'machine_name' => 'block_below_footer_content',
     'module' => 'block',
     'node_types' => array(),
@@ -143,7 +143,7 @@ function issues_blocks_feature_default_fe_block_settings() {
     'css_class' => 'comments-buttons container',
     'custom' => 0,
     'i18n_block_language' => array(),
-    'i18n_mode' => 0,
+    'i18n_mode' => 1,
     'machine_name' => 'block_comments_buttons',
     'module' => 'block',
     'node_types' => array(
@@ -169,7 +169,7 @@ function issues_blocks_feature_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'issues',
-        'weight' => -16,
+        'weight' => -14,
       ),
       'seven' => array(
         'region' => '',
@@ -228,7 +228,7 @@ function issues_blocks_feature_default_fe_block_settings() {
     'css_class' => '',
     'custom' => 0,
     'i18n_block_language' => array(),
-    'i18n_mode' => 0,
+    'i18n_mode' => 1,
     'machine_name' => 'block_highlight_text',
     'module' => 'block',
     'node_types' => array(),
@@ -251,7 +251,7 @@ function issues_blocks_feature_default_fe_block_settings() {
         'region' => 'highlighted',
         'status' => 1,
         'theme' => 'issues',
-        'weight' => -25,
+        'weight' => -15,
       ),
       'seven' => array(
         'region' => '',
@@ -311,7 +311,7 @@ function issues_blocks_feature_default_fe_block_settings() {
     'custom' => 0,
     'delta' => 'comment_form_block',
     'i18n_block_language' => array(),
-    'i18n_mode' => 0,
+    'i18n_mode' => 1,
     'module' => 'commentsblock',
     'node_types' => array(
       0 => 'answer',
@@ -336,7 +336,7 @@ function issues_blocks_feature_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'issues',
-        'weight' => -15,
+        'weight' => -13,
       ),
       'seven' => array(
         'region' => '',
@@ -396,7 +396,7 @@ function issues_blocks_feature_default_fe_block_settings() {
     'custom' => 0,
     'delta' => 'newsletter_signup',
     'i18n_block_language' => array(),
-    'i18n_mode' => 0,
+    'i18n_mode' => 1,
     'module' => 'mailchimp_signup',
     'node_types' => array(),
     'pages' => '',
@@ -601,7 +601,7 @@ function issues_blocks_feature_default_fe_block_settings() {
     'custom' => 0,
     'delta' => 'homepage_tabs',
     'i18n_block_language' => array(),
-    'i18n_mode' => 0,
+    'i18n_mode' => 1,
     'module' => 'quicktabs',
     'node_types' => array(),
     'pages' => '<front>',
@@ -623,7 +623,7 @@ function issues_blocks_feature_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'issues',
-        'weight' => -14,
+        'weight' => -12,
       ),
       'seven' => array(
         'region' => '',
@@ -806,7 +806,7 @@ function issues_blocks_feature_default_fe_block_settings() {
     'custom' => 0,
     'delta' => 'main',
     'i18n_block_language' => array(),
-    'i18n_mode' => 0,
+    'i18n_mode' => 1,
     'module' => 'system',
     'node_types' => array(),
     'pages' => '',
@@ -828,7 +828,7 @@ function issues_blocks_feature_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'issues',
-        'weight' => -24,
+        'weight' => -21,
       ),
       'seven' => array(
         'region' => 'content',
@@ -1052,7 +1052,7 @@ function issues_blocks_feature_default_fe_block_settings() {
     'custom' => 0,
     'delta' => 'login',
     'i18n_block_language' => array(),
-    'i18n_mode' => 0,
+    'i18n_mode' => 1,
     'module' => 'user',
     'node_types' => array(),
     'pages' => 'user',
@@ -1216,7 +1216,220 @@ function issues_blocks_feature_default_fe_block_settings() {
     'custom' => 0,
     'delta' => 'answers-block',
     'i18n_block_language' => array(),
+    'i18n_mode' => 1,
+    'module' => 'views',
+    'node_types' => array(
+      0 => 'party',
+    ),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'bootstrap' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bootstrap',
+        'weight' => 0,
+      ),
+      'issues' => array(
+        'region' => 'content',
+        'status' => 1,
+        'theme' => 'issues',
+        'weight' => -17,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '<none>',
+    'visibility' => 0,
+  );
+
+  $export['views-answers-block_1'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'answers-block_1',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 1,
+    'module' => 'views',
+    'node_types' => array(
+      0 => 'candidate',
+    ),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'bootstrap' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bootstrap',
+        'weight' => 0,
+      ),
+      'issues' => array(
+        'region' => 'content',
+        'status' => 1,
+        'theme' => 'issues',
+        'weight' => -18,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '<none>',
+    'visibility' => 0,
+  );
+
+  $export['views-answers-block_2'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'answers-block_2',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 1,
+    'module' => 'views',
+    'node_types' => array(
+      0 => 'question',
+    ),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'bootstrap' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bootstrap',
+        'weight' => 0,
+      ),
+      'issues' => array(
+        'region' => 'content',
+        'status' => 1,
+        'theme' => 'issues',
+        'weight' => -15,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '<none>',
+    'visibility' => 0,
+  );
+
+  $export['views-answers-block_3'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'answers-block_3',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 1,
+    'module' => 'views',
+    'node_types' => array(
+      0 => 'answer',
+    ),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'bootstrap' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bootstrap',
+        'weight' => 0,
+      ),
+      'issues' => array(
+        'region' => 'content',
+        'status' => 1,
+        'theme' => 'issues',
+        'weight' => -19,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '<none>',
+    'visibility' => 0,
+  );
+
+  $export['views-answers-other_answers'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'answers-other_answers',
+    'i18n_block_language' => array(),
     'i18n_mode' => 0,
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'bootstrap' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bootstrap',
+        'weight' => 0,
+      ),
+      'issues' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'issues',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['views-candidates-block_1'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'candidates-block_1',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 1,
     'module' => 'views',
     'node_types' => array(
       0 => 'party',
@@ -1253,228 +1466,13 @@ function issues_blocks_feature_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['views-answers-block_1'] = array(
-    'cache' => -1,
-    'css_class' => '',
-    'custom' => 0,
-    'delta' => 'answers-block_1',
-    'i18n_block_language' => array(),
-    'i18n_mode' => 0,
-    'module' => 'views',
-    'node_types' => array(
-      0 => 'candidate',
-    ),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
-      'issues' => array(
-        'region' => 'content',
-        'status' => 1,
-        'theme' => 'issues',
-        'weight' => -21,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
-  $export['views-answers-block_2'] = array(
-    'cache' => -1,
-    'css_class' => '',
-    'custom' => 0,
-    'delta' => 'answers-block_2',
-    'i18n_block_language' => array(),
-    'i18n_mode' => 0,
-    'module' => 'views',
-    'node_types' => array(
-      0 => 'question',
-    ),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
-      'issues' => array(
-        'region' => 'content',
-        'status' => 1,
-        'theme' => 'issues',
-        'weight' => -18,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
-  $export['views-answers-block_3'] = array(
-    'cache' => -1,
-    'css_class' => '',
-    'custom' => 0,
-    'delta' => 'answers-block_3',
-    'i18n_block_language' => array(),
-    'i18n_mode' => 0,
-    'module' => 'views',
-    'node_types' => array(
-      0 => 'answer',
-    ),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
-      'issues' => array(
-        'region' => 'content',
-        'status' => 1,
-        'theme' => 'issues',
-        'weight' => -22,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
-  $export['views-answers-other_answers'] = array(
-    'cache' => -1,
-    'css_class' => '',
-    'custom' => 0,
-    'delta' => 'answers-other_answers',
-    'i18n_block_language' => array(),
-    'i18n_mode' => 0,
-    'module' => 'views',
-    'node_types' => array(
-      0 => 'answer',
-    ),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
-      'issues' => array(
-        'region' => 'content',
-        'status' => 1,
-        'theme' => 'issues',
-        'weight' => -17,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
-  $export['views-candidates-block_1'] = array(
-    'cache' => -1,
-    'css_class' => '',
-    'custom' => 0,
-    'delta' => 'candidates-block_1',
-    'i18n_block_language' => array(),
-    'i18n_mode' => 0,
-    'module' => 'views',
-    'node_types' => array(
-      0 => 'party',
-    ),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
-      'issues' => array(
-        'region' => 'content',
-        'status' => 1,
-        'theme' => 'issues',
-        'weight' => -23,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '<none>',
-    'visibility' => 0,
-  );
-
   $export['views-comment_count-comment_count'] = array(
     'cache' => -1,
     'css_class' => '',
     'custom' => 0,
     'delta' => 'comment_count-comment_count',
     'i18n_block_language' => array(),
-    'i18n_mode' => 0,
+    'i18n_mode' => 1,
     'module' => 'views',
     'node_types' => array(),
     'pages' => '<front>',
@@ -1496,7 +1494,7 @@ function issues_blocks_feature_default_fe_block_settings() {
         'region' => 'highlighted',
         'status' => 1,
         'theme' => 'issues',
-        'weight' => -21,
+        'weight' => 0,
       ),
       'seven' => array(
         'region' => '',
@@ -1638,7 +1636,7 @@ function issues_blocks_feature_default_fe_block_settings() {
     'custom' => 0,
     'delta' => 'partners-block_1',
     'i18n_block_language' => array(),
-    'i18n_mode' => 0,
+    'i18n_mode' => 1,
     'module' => 'views',
     'node_types' => array(),
     'pages' => '<front>',
@@ -1660,7 +1658,7 @@ function issues_blocks_feature_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'issues',
-        'weight' => -13,
+        'weight' => -11,
       ),
       'seven' => array(
         'region' => '',
@@ -1679,7 +1677,7 @@ function issues_blocks_feature_default_fe_block_settings() {
     'custom' => 0,
     'delta' => 'partners-block_2',
     'i18n_block_language' => array(),
-    'i18n_mode' => 0,
+    'i18n_mode' => 1,
     'module' => 'views',
     'node_types' => array(),
     'pages' => '<front>',
@@ -1701,7 +1699,7 @@ function issues_blocks_feature_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'issues',
-        'weight' => -12,
+        'weight' => -10,
       ),
       'seven' => array(
         'region' => '',
@@ -1720,7 +1718,7 @@ function issues_blocks_feature_default_fe_block_settings() {
     'custom' => 0,
     'delta' => 'party_summary-block',
     'i18n_block_language' => array(),
-    'i18n_mode' => 0,
+    'i18n_mode' => 1,
     'module' => 'views',
     'node_types' => array(
       0 => 'candidate',
@@ -1745,7 +1743,7 @@ function issues_blocks_feature_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'issues',
-        'weight' => -19,
+        'weight' => -16,
       ),
       'seven' => array(
         'region' => '',
@@ -1887,7 +1885,7 @@ function issues_blocks_feature_default_fe_block_settings() {
     'custom' => 0,
     'delta' => 'questions-block_3',
     'i18n_block_language' => array(),
-    'i18n_mode' => 0,
+    'i18n_mode' => 1,
     'module' => 'views',
     'node_types' => array(),
     'pages' => '<front>',
@@ -1909,7 +1907,7 @@ function issues_blocks_feature_default_fe_block_settings() {
         'region' => 'highlighted',
         'status' => 1,
         'theme' => 'issues',
-        'weight' => -23,
+        'weight' => 0,
       ),
       'seven' => array(
         'region' => '',
@@ -1928,7 +1926,7 @@ function issues_blocks_feature_default_fe_block_settings() {
     'custom' => 0,
     'delta' => 'questions-block_4',
     'i18n_block_language' => array(),
-    'i18n_mode' => 0,
+    'i18n_mode' => 1,
     'module' => 'views',
     'node_types' => array(),
     'pages' => '<front>',
@@ -1950,7 +1948,7 @@ function issues_blocks_feature_default_fe_block_settings() {
         'region' => 'highlighted',
         'status' => 1,
         'theme' => 'issues',
-        'weight' => -22,
+        'weight' => 0,
       ),
       'seven' => array(
         'region' => '',

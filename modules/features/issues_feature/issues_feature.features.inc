@@ -168,7 +168,7 @@ function issues_feature_node_info() {
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
-      'title_label' => t('Answer'),
+      'title_label' => t('Answer Title'),
       'help' => '',
     ),
     'candidate' => array(

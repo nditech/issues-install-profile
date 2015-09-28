@@ -365,7 +365,7 @@ function issues_feature_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_page';
-  $strongarm->value = 0;
+  $strongarm->value = '0';
   $export['comment_page'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -400,7 +400,7 @@ function issues_feature_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_preview_page';
-  $strongarm->value = '0';
+  $strongarm->value = '1';
   $export['comment_preview_page'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -449,7 +449,7 @@ function issues_feature_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_subject_field_page';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['comment_subject_field_page'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -513,7 +513,14 @@ function issues_feature_strongarm() {
           'weight' => '6',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'language' => array(
+          'default' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__answer'] = $strongarm;
@@ -558,7 +565,14 @@ function issues_feature_strongarm() {
           'weight' => '10',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'language' => array(
+          'default' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__candidate'] = $strongarm;
@@ -590,8 +604,11 @@ function issues_feature_strongarm() {
     ),
     'extra_fields' => array(
       'form' => array(
+        'language' => array(
+          'weight' => '1',
+        ),
         'metatags' => array(
-          'weight' => '4',
+          'weight' => '5',
         ),
         'title' => array(
           'weight' => '0',
@@ -600,10 +617,17 @@ function issues_feature_strongarm() {
           'weight' => '3',
         ),
         'redirect' => array(
-          'weight' => '2',
+          'weight' => '4',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'language' => array(
+          'default' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__page'] = $strongarm;
@@ -648,7 +672,14 @@ function issues_feature_strongarm() {
           'weight' => '4',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'language' => array(
+          'default' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__partner'] = $strongarm;

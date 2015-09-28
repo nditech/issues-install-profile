@@ -51,8 +51,9 @@ function issues_blocks_feature_default_fe_block_boxes() {
   $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'block_footer_social_media';
   $fe_block_boxes->body = '<ul>
-	<li><a href="/"><span>Facebook</span></a></li>
-	<li><a href="/"><span>Twitter</span></a></li>
+	<li><a href="https://www.facebook.com" target="_blank"><span>Facebook</span></a></li>
+	<li><a href="https://www.twitter.com" target="_blank"><span>Twitter</span></a></li>
+	<li><a href="https://www.youtube.com" target="_blank"><span>YouTube</span></a></li>
 </ul>
 ';
 

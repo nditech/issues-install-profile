@@ -66,8 +66,3 @@ features[fe_block_settings][] = views-questions-block_2
 features[fe_block_settings][] = views-questions-block_3
 features[fe_block_settings][] = views-questions-block_4
 features[features_api][] = api:2
-
-; Information added by drush on 2015-09-21
-version = "master-dev"
-project = "issues_profile"
-datestamp = "1442829551"

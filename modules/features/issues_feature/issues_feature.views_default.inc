@@ -194,6 +194,13 @@ function issues_feature_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = '<h2>Party Member Answers</h2>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Path */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['label'] = '';
+  $handler->display->display_options['fields']['path']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
   /* Field: Content: Photo */
   $handler->display->display_options['fields']['field_photo']['id'] = 'field_photo';
   $handler->display->display_options['fields']['field_photo']['table'] = 'field_data_field_photo';
@@ -205,7 +212,7 @@ function issues_feature_views_default_views() {
   $handler->display->display_options['fields']['field_photo']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_photo']['settings'] = array(
     'image_style' => 'candidate_answer_photo',
-    'image_link' => 'content',
+    'image_link' => '',
   );
   /* Field: Content: SoundCloud audio */
   $handler->display->display_options['fields']['field_soundcloud_audio']['id'] = 'field_soundcloud_audio';
@@ -253,7 +260,7 @@ function issues_feature_views_default_views() {
   $handler->display->display_options['fields']['views_conditional_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['views_conditional_1']['if'] = 'views_conditional';
   $handler->display->display_options['fields']['views_conditional_1']['condition'] = '5';
-  $handler->display->display_options['fields']['views_conditional_1']['then'] = '<i class="fa fa-list"></i>[field_photo]';
+  $handler->display->display_options['fields']['views_conditional_1']['then'] = '<a href="[path]"><i class="fa fa-list"></i>[field_photo]</a>';
   $handler->display->display_options['fields']['views_conditional_1']['strip_tags'] = 0;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_2']['id'] = 'title_2';
@@ -343,6 +350,13 @@ function issues_feature_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = '<h2>Answers</h2>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Path */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['label'] = '';
+  $handler->display->display_options['fields']['path']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
   /* Field: Content: Photo */
   $handler->display->display_options['fields']['field_photo']['id'] = 'field_photo';
   $handler->display->display_options['fields']['field_photo']['table'] = 'field_data_field_photo';
@@ -354,7 +368,7 @@ function issues_feature_views_default_views() {
   $handler->display->display_options['fields']['field_photo']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_photo']['settings'] = array(
     'image_style' => 'candidate_answer_photo',
-    'image_link' => 'content',
+    'image_link' => '',
   );
   /* Field: Content: SoundCloud audio */
   $handler->display->display_options['fields']['field_soundcloud_audio']['id'] = 'field_soundcloud_audio';
@@ -402,7 +416,7 @@ function issues_feature_views_default_views() {
   $handler->display->display_options['fields']['views_conditional_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['views_conditional_1']['if'] = 'views_conditional';
   $handler->display->display_options['fields']['views_conditional_1']['condition'] = '5';
-  $handler->display->display_options['fields']['views_conditional_1']['then'] = '<i class="fa fa-list"></i>[field_photo]';
+  $handler->display->display_options['fields']['views_conditional_1']['then'] = '<a href="[path]"><i class="fa fa-list"></i>[field_photo]</a>';
   $handler->display->display_options['fields']['views_conditional_1']['strip_tags'] = 0;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
@@ -511,6 +525,13 @@ function issues_feature_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = '<h2>Answers</h2>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Path */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['label'] = '';
+  $handler->display->display_options['fields']['path']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
   /* Field: Content: Photo */
   $handler->display->display_options['fields']['field_photo']['id'] = 'field_photo';
   $handler->display->display_options['fields']['field_photo']['table'] = 'field_data_field_photo';
@@ -522,7 +543,7 @@ function issues_feature_views_default_views() {
   $handler->display->display_options['fields']['field_photo']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_photo']['settings'] = array(
     'image_style' => 'candidate_answer_photo',
-    'image_link' => 'content',
+    'image_link' => '',
   );
   /* Field: Content: SoundCloud audio */
   $handler->display->display_options['fields']['field_soundcloud_audio']['id'] = 'field_soundcloud_audio';
@@ -570,7 +591,7 @@ function issues_feature_views_default_views() {
   $handler->display->display_options['fields']['views_conditional_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['views_conditional_1']['if'] = 'views_conditional';
   $handler->display->display_options['fields']['views_conditional_1']['condition'] = '5';
-  $handler->display->display_options['fields']['views_conditional_1']['then'] = '<i class="fa fa-list"></i>[field_photo]';
+  $handler->display->display_options['fields']['views_conditional_1']['then'] = '<a href="[path]"><i class="fa fa-list"></i>[field_photo]</a>';
   $handler->display->display_options['fields']['views_conditional_1']['strip_tags'] = 0;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_2']['id'] = 'title_2';
@@ -654,8 +675,8 @@ function issues_feature_views_default_views() {
     'answer' => 'answer',
   );
 
-  /* Display: Anwers per Question Block */
-  $handler = $view->new_display('block', 'Anwers per Question Block', 'block_3');
+  /* Display: Answers per Question Block */
+  $handler = $view->new_display('block', 'Answers per Question Block', 'block_3');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'container';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
@@ -678,6 +699,13 @@ function issues_feature_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = '<h2>Answers</h2>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Path */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['label'] = '';
+  $handler->display->display_options['fields']['path']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
   /* Field: Content: Photo */
   $handler->display->display_options['fields']['field_photo']['id'] = 'field_photo';
   $handler->display->display_options['fields']['field_photo']['table'] = 'field_data_field_photo';
@@ -689,7 +717,7 @@ function issues_feature_views_default_views() {
   $handler->display->display_options['fields']['field_photo']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_photo']['settings'] = array(
     'image_style' => 'candidate_answer_photo',
-    'image_link' => 'content',
+    'image_link' => '',
   );
   /* Field: Content: SoundCloud audio */
   $handler->display->display_options['fields']['field_soundcloud_audio']['id'] = 'field_soundcloud_audio';
@@ -698,7 +726,7 @@ function issues_feature_views_default_views() {
   $handler->display->display_options['fields']['field_soundcloud_audio']['label'] = '';
   $handler->display->display_options['fields']['field_soundcloud_audio']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_soundcloud_audio']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_soundcloud_audio']['alter']['text'] = '<i class="fa fa-headphones"></i>[field_photo]';
+  $handler->display->display_options['fields']['field_soundcloud_audio']['alter']['text'] = '<a href="[path]"><i class="fa fa-headphones"></i>[field_photo]</a>';
   $handler->display->display_options['fields']['field_soundcloud_audio']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_soundcloud_audio']['hide_empty'] = TRUE;
   /* Field: Content: Video */
@@ -737,7 +765,7 @@ function issues_feature_views_default_views() {
   $handler->display->display_options['fields']['views_conditional_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['views_conditional_1']['if'] = 'views_conditional';
   $handler->display->display_options['fields']['views_conditional_1']['condition'] = '5';
-  $handler->display->display_options['fields']['views_conditional_1']['then'] = '<i class="fa fa-list"></i>[field_photo]';
+  $handler->display->display_options['fields']['views_conditional_1']['then'] = '<a href="[path]"><i class="fa fa-list"></i>[field_photo]</a>';
   $handler->display->display_options['fields']['views_conditional_1']['strip_tags'] = 0;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -1485,6 +1513,14 @@ function issues_feature_views_default_views() {
     'answer' => 'answer',
     'question' => 'question',
   );
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['relationship'] = 'nid';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
 
   /* Display: # of Comments */
   $handler = $view->new_display('block', '# of Comments', 'comment_count');
@@ -1889,6 +1925,7 @@ function issues_feature_views_default_views() {
   $handler->display->display_options['fields']['field_video']['table'] = 'field_data_field_video';
   $handler->display->display_options['fields']['field_video']['field'] = 'field_video';
   $handler->display->display_options['fields']['field_video']['label'] = '';
+  $handler->display->display_options['fields']['field_video']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_video']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_video']['click_sort_column'] = 'video_url';
   $handler->display->display_options['fields']['field_video']['exclude'] = TRUE;
@@ -1902,6 +1939,7 @@ function issues_feature_views_default_views() {
   $handler->display->display_options['fields']['field_soundcloud_audio']['label'] = '';
   $handler->display->display_options['fields']['field_soundcloud_audio']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_soundcloud_audio']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_soundcloud_audio']['element_label_colon'] = FALSE;
   /* Field: Content: Description */
   $handler->display->display_options['fields']['field_body']['id'] = 'field_body';
   $handler->display->display_options['fields']['field_body']['table'] = 'field_data_field_body';
@@ -1909,6 +1947,7 @@ function issues_feature_views_default_views() {
   $handler->display->display_options['fields']['field_body']['label'] = '';
   $handler->display->display_options['fields']['field_body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_body']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_body']['type'] = 'text_plain';
   /* Field: Views: Views Conditional */
   $handler->display->display_options['fields']['views_conditional_1']['id'] = 'views_conditional_1';
@@ -2559,6 +2598,27 @@ function issues_feature_views_default_views() {
   $handler->display->display_options['sorts']['nid']['order'] = 'DESC';
   $handler->display->display_options['sorts']['nid']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['nid']['expose']['label'] = 'Most Answers';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'question' => 'question',
+  );
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
 
   /* Display: Answered questions block */
   $handler = $view->new_display('block', 'Answered questions block', 'block_1');
@@ -2766,6 +2826,13 @@ function issues_feature_views_default_views() {
   $handler->display->display_options['filters']['field_answered_value']['field'] = 'field_answered_value';
   $handler->display->display_options['filters']['field_answered_value']['value'] = array(
     1 => '1',
+  );
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
 
   /* Display: Unanswered questions block */
@@ -3009,6 +3076,13 @@ function issues_feature_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'question' => 'question',
   );
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
 
   /* Display: # of Answered Questions */
   $handler = $view->new_display('block', '# of Answered Questions', 'block_4');
@@ -3050,6 +3124,13 @@ function issues_feature_views_default_views() {
   $handler->display->display_options['filters']['field_answered_value']['field'] = 'field_answered_value';
   $handler->display->display_options['filters']['field_answered_value']['value'] = array(
     1 => '1',
+  );
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
   $export['questions'] = $view;
 
