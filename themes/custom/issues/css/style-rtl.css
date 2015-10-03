@@ -162,11 +162,13 @@ html, body {
 }
 
 /* Override settings from system.menus-rtl.css to style the main menu. */
-ul.navbar-nav li {
+ul.navbar-nav li,
+ul.menu.nav li {
   margin: 0;
 }
 
-ul.navbar-nav li.expanded, ul.navbar-nav li.collapsed, ul.navbar-nav li.leaf {
+ul.navbar-nav li.expanded, ul.navbar-nav li.collapsed, ul.navbar-nav li.leaf,
+ul.menu.nav li.expanded, ul.menu.nav li.collapsed, ul.menu.nav li.leaf {
   padding: 0;
 }
 

@@ -883,7 +883,6 @@ function issues_feature_strongarm() {
   $strongarm->name = 'i18n_string_allowed_formats';
   $strongarm->value = array(
     'full_html' => 'full_html',
-    'filtered_html' => 'filtered_html',
     'plain_text' => 'plain_text',
   );
   $export['i18n_string_allowed_formats'] = $strongarm;
@@ -2478,13 +2477,13 @@ function issues_feature_strongarm() {
     'toggle_comment_user_picture' => 0,
     'toggle_comment_user_verification' => 0,
     'toggle_favicon' => 1,
-    'toggle_main_menu' => 1,
+    'toggle_main_menu' => 0,
     'toggle_secondary_menu' => 0,
-    'default_logo' => 0,
-    'logo_path' => 'public://issues-logo.png',
+    'default_logo' => 1,
+    'logo_path' => '',
     'logo_upload' => '',
-    'default_favicon' => 0,
-    'favicon_path' => 'public://favicon.ico',
+    'default_favicon' => 1,
+    'favicon_path' => '',
     'favicon_upload' => '',
     'general__active_tab' => 'edit-theme-settings',
     'bootstrap__active_tab' => 'edit-components',
@@ -2542,7 +2541,6 @@ function issues_feature_strongarm() {
     'bootstrap_rebuild_registry' => 0,
     'bootstrap_toggle_jquery_error' => 0,
     'jquery_update_jquery_version' => '',
-    'favicon_mimetype' => 'image/vnd.microsoft.icon',
   );
   $export['theme_issues_settings'] = $strongarm;
 

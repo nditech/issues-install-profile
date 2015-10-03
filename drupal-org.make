@@ -115,7 +115,7 @@ projects[strongarm][subdir] = contrib
 projects[strongarm][version] = 2.0
 
 projects[taxonomy_term_statistics][subdir] = contrib
-projects[taxonomy_term_statistics][version] = 1.x-dev
+projects[taxonomy_term_statistics][version] = 1.0
 
 projects[token][subdir] = contrib
 projects[token][version] = 1.6

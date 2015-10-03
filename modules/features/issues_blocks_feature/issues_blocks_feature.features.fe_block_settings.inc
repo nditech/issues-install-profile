@@ -847,7 +847,7 @@ function issues_blocks_feature_default_fe_block_settings() {
     'custom' => 0,
     'delta' => 'main-menu',
     'i18n_block_language' => array(),
-    'i18n_mode' => 0,
+    'i18n_mode' => 1,
     'module' => 'system',
     'node_types' => array(),
     'pages' => '',
@@ -866,8 +866,8 @@ function issues_blocks_feature_default_fe_block_settings() {
         'weight' => 0,
       ),
       'issues' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'navigation',
+        'status' => 1,
         'theme' => 'issues',
         'weight' => 0,
       ),
@@ -878,7 +878,7 @@ function issues_blocks_feature_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
+    'title' => '<none>',
     'visibility' => 0,
   );
 
@@ -1197,7 +1197,7 @@ function issues_blocks_feature_default_fe_block_settings() {
         'region' => 'below_navbar',
         'status' => 1,
         'theme' => 'issues',
-        'weight' => -24,
+        'weight' => -23,
       ),
       'seven' => array(
         'region' => '',
